@@ -1,0 +1,31 @@
+.action-group {
+  text-align: right;
+}
+
+.action-group button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #40005d;
+  background-color: #a1e24cc2;
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+.action-group button:hover,
+.action-group button:active {
+  background-color: #ff1010;
+  border-color: #fafafa;
+}
+
+.action-group button.alternative {
+  color: #220131;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.action-group button.alternative:hover,
+.action-group button.alternative:active {
+  background-color: #ddb3f8;
+}
