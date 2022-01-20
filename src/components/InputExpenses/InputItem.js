@@ -7,12 +7,6 @@ const InputItem = (props) => {
     const [enteredAmount,setEnteredAmount] = useState('');
     const [enteredDate,setEnteredDate] = useState(''); */
 
-    const [enteredInput,setEnteredInput] = useState({
-        enteredTitle: '',
-        enteredAmount: '',
-        enteredDate: ''
-    }); 
-
  /*    let newTitle = enteredInput.enteredTitle;
     let newAmount = enteredInput.enteredAmount;
     let newDate = enteredInput.enteredDate; */
@@ -25,36 +19,7 @@ const InputItem = (props) => {
 
     console.log(newExpense); */
 
-    const titleChangeHandler = (evtObj) => {
-        // setEnteredTitle(evtObj.target.value);
-        //console.log(evtObj.target.value);
-       setEnteredInput( (prevState) => {
-           return { ...prevState,
-            enteredTitle: evtObj.target.value
-           }
-       });
-       props.onSaveExpenseData(enteredInput);
-    };
-    const amountChangeHandler = (evtObj) => {
-        // setEnteredAmount(evtObj.target.value);
-        console.log(evtObj.target.value);
-        setEnteredInput((prevState) => {
-            return { ...prevState,
-                enteredAmount: evtObj.target.value,
-               }
-        });
-        props.onSaveExpenseData(enteredInput);
-    };
-    const dateChangeHandler = (evtObj) => {
-        // setEnteredDate(evtObj.target.value);
-        console.log(evtObj.target.value);
-        setEnteredInput((prevState) => {
-            return { ...prevState,
-                enteredDate: evtObj.target.value,
-               }
-        });
-        props.onSaveExpenseData(enteredInput);
-    };
+    
 
     /* const Data = {
         title:enteredTitle ,
@@ -62,14 +27,16 @@ const InputItem = (props) => {
         date: new Date(enteredDate)
     }  */
     // console.log(Data);
-
+    
     switch(props.inputType) {
         case 'text' : 
             return (
                 <div className='input-group'>
                     <label>{props.labelContent}</label>
                     <input type={props.inputType}
-                    onChange={titleChangeHandler}/> 
+                    onChange={props.onChangeHandler}
+                    value={props.currValue}
+                    /> 
                 </div>
             ); 
              
@@ -80,7 +47,8 @@ const InputItem = (props) => {
                     <input type={props.inputType} 
                        min={props.minValue} 
                        step={props.stepValue}
-                       onChange={amountChangeHandler}
+                       onChange={props.onChangeHandler}
+                       value={props.currValue}
                        /> 
                 </div>
             )
@@ -91,7 +59,8 @@ const InputItem = (props) => {
                     <input type={props.inputType} 
                     min={props.minValue} 
                     max={props.maxValue}
-                    onChange={dateChangeHandler}
+                    onChange={props.onChangeHandler}
+                    value={props.currValue}
                     />  
                 </div>
             )

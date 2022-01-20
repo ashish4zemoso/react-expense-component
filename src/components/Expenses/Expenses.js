@@ -5,7 +5,20 @@ import Card from '../UI/Card'
 function Expenses (props){
     return (
       <Card className="expenses">
-        <ExpenseItem 
+        { props.items.map( (expenseObj) => (
+          <ExpenseItem  
+            title={expenseObj.title} 
+            amount={expenseObj.amount}
+            date={expenseObj.date} 
+            />
+          ))}
+      </Card>
+    );
+}
+
+export default Expenses;
+
+/*   <ExpenseItem 
         title={props.items[0].title} 
         amount={props.items[0].amount} 
         date={props.items[0].date} />
@@ -23,9 +36,4 @@ function Expenses (props){
        <ExpenseItem 
         title={props.items[3].title} 
         amount={props.items[3].amount} 
-        date={props.items[3].date} />
-      </Card>
-    );
-}
-
-export default Expenses;
+        date={props.items[3].date} /> */
