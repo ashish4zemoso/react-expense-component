@@ -4,7 +4,7 @@ const ActionItem = (props) => {
     switch(props.actionType){
         case 'button':
             return (
-                <div class='action-group'>
+                <div className='action-group'>
                     <button type={props.typeAttribute}>
                         {props.itemContent}
                     </button>
