@@ -5,16 +5,10 @@ import {useState} from 'react'
 
 const ExpenseForm  = (props) => {
 
-    /* const [inputData,setInputData] = useState( {
-        title: '',
-        amount: '',
-        date : new Date('')
-    } ) ; */
-
     const [enteredInput,setEnteredInput] = useState({
         title: '',
-        amount: '',
-        date: ''
+        amount: 0.0,
+        date: new Date()
     }); 
 
     const submitHandler = (evtObj) => {
@@ -22,7 +16,7 @@ const ExpenseForm  = (props) => {
         const expenseData = enteredInput;
         console.log(expenseData); 
         props.onAddExpense(expenseData);
-        
+
         setEnteredInput({
             title: '',
             amount: 0.0,
@@ -31,22 +25,13 @@ const ExpenseForm  = (props) => {
         //console.log(enteredInput); 
     }
 
- /*    const onSaveExpenseDataHandler = (enteredExpenseData) => {
-        setInputData(enteredExpenseData); 
-        console.log(enteredExpenseData);
-    }
- */
     const titleChangeHandler = (evtObj) => {
-        // setEnteredTitle(evtObj.target.value);
-        //console.log(evtObj.target.value);
        setEnteredInput( (prevState) => {
            return { ...prevState,
             title: evtObj.target.value
            }
        });
        console.log(enteredInput)
-       //onSaveExpenseDataHandler(enteredInput)
-       //props.onSaveExpenseData(enteredInput);
     };
     const amountChangeHandler = (evtObj) => {
         // setEnteredAmount(evtObj.target.value);
@@ -57,8 +42,6 @@ const ExpenseForm  = (props) => {
                }
         });
         console.log(enteredInput)
-        //onSaveExpenseDataHandler(enteredInput)
-        //props.onSaveExpenseData(enteredInput);
     };
     const dateChangeHandler = (evtObj) => {
         // setEnteredDate(evtObj.target.value);
@@ -69,11 +52,8 @@ const ExpenseForm  = (props) => {
                }
         });
         console.log(enteredInput)
-        //onSaveExpenseDataHandler(enteredInput)
-        //props.onSaveExpenseData(enteredInput);
     };
-    
-    //console.log('hiiii')
+ 
     return (
         <form onSubmit={submitHandler}>
             <div className='new-expense-controls'>
@@ -86,12 +66,12 @@ const ExpenseForm  = (props) => {
                    onChangeHandler={amountChangeHandler}
                 />
                 <InputItem labelContent='Date' inputType='date' 
-                    minValue='2022-01-01' maxValue = '2022-12-31'
+                    minValue='2019-01-01' maxValue = '2022-12-31'
                     currValue={enteredInput.date}
                     onChangeHandler={dateChangeHandler} 
                 />
                 <ActionItem actionType='button' itemContent='Add Expense' 
-                    typeAttribute='submit' 
+                    typeAttribute='submit' onCancel={props.onCancel}
                 />
             </div>
         </form>
@@ -99,3 +79,9 @@ const ExpenseForm  = (props) => {
 }
 
 export default ExpenseForm;
+
+/*    const onSaveExpenseDataHandler = (enteredExpenseData) => {
+        setInputData(enteredExpenseData); 
+        console.log(enteredExpenseData);
+    }
+ */

@@ -7,9 +7,9 @@ import {useState} from 'react';
 const dummyExpenses = [
   {
     id: 'e1',
-    title: 'Ream of White Paper',
-    amount: 125.00,
-    date: new Date(2022, 0, 18),
+    title: 'Reams of White Paper',
+    amount: 4125.00,
+    date: new Date(2022, 1, 18),
   },
   { id: 'e2', 
     title: 'New TV', 
@@ -26,9 +26,28 @@ const dummyExpenses = [
     id: 'e4',
     title: 'New Wooden Desk',
     amount: 4500,
-    date: new Date(2022, 5, 12),
+    date: new Date(2020, 5, 12),
+  },
+  {
+    id: 'e5',
+    title: 'New Car Wipers',
+    amount: 4500,
+    date: new Date(2021, 4, 12),
+  },
+  {
+    id: 'e6',
+    title: 'New Bowl Set',
+    amount: 2300,
+    date: new Date(2020, 3, 12),
+  },
+  {
+    id: 'e7',
+    title: 'Health Coverage',
+    amount: 1960.99,
+    date: new Date(2020, 6, 12),
   },
 ];
+
 const App = () => {
   const [expenses,setExpenses] = useState(dummyExpenses);
 

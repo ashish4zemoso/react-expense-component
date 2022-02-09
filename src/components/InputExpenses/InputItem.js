@@ -1,32 +1,7 @@
 import './InputItem.css'
-import {useState} from 'react';
+/* import {useState} from 'react'; */
 
 const InputItem = (props) => {
-   
-    /* const [enteredTitle,setEnteredTitle] = useState('');
-    const [enteredAmount,setEnteredAmount] = useState('');
-    const [enteredDate,setEnteredDate] = useState(''); */
-
- /*    let newTitle = enteredInput.enteredTitle;
-    let newAmount = enteredInput.enteredAmount;
-    let newDate = enteredInput.enteredDate; */
-
-    /* const newExpense = {
-        title: enteredTitle,
-        amount: enteredAmount,
-        date: enteredDate
-    }
-
-    console.log(newExpense); */
-
-    
-
-    /* const Data = {
-        title:enteredTitle ,
-        amount: enteredAmount,
-        date: new Date(enteredDate)
-    }  */
-    // console.log(Data);
     
     switch(props.inputType) {
         case 'text' : 
@@ -74,3 +49,28 @@ export default InputItem;
 
 /*export enteredDate;
 export enteredAmount; */
+
+ /* const [enteredTitle,setEnteredTitle] = useState('');
+    const [enteredAmount,setEnteredAmount] = useState('');
+    const [enteredDate,setEnteredDate] = useState(''); */
+
+ /*    let newTitle = enteredInput.enteredTitle;
+    let newAmount = enteredInput.enteredAmount;
+    let newDate = enteredInput.enteredDate; */
+
+    /* const newExpense = {
+        title: enteredTitle,
+        amount: enteredAmount,
+        date: enteredDate
+    }
+
+    console.log(newExpense); */
+
+    
+
+    /* const Data = {
+        title:enteredTitle ,
+        amount: enteredAmount,
+        date: new Date(enteredDate)
+    }  */
+    // console.log(Data);
